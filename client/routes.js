@@ -16,13 +16,13 @@ angular.module("assetManager").config(['$urlRouterProvider', '$stateProvider', '
     $stateProvider
       .state('assetScan', {
         url: '/assetscan',
-        templateUrl: 'client/parties/views/parties-list.ng.html',
+        templateUrl: 'client/parties/views/asset-scan.ng.html',
         controller: 'AssetScanCtrl'
       })
       .state('partyDetails', {
         url: '/parties/:partyId',
-        templateUrl: 'client/parties/views/party-details.ng.html',
-        controller: 'PartyDetailsCtrl',
+        templateUrl: 'client/parties/views/asset-details.ng.html',
+        controller: 'AssetDetailsCtrl',
         resolve: {
           "currentUser": ["$meteor", function($meteor){
             return $meteor.requireUser();

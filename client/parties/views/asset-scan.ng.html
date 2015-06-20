@@ -8,22 +8,22 @@
                         <div>
                             <label for="assetScanCode">Asset tag</label>
                             <input class="form-control" id="assetScanCode" type="text" placeholder={{placeholderMessage}}
-                                    ng-model="scanCode">
+                                    ng-model="assetTag">
 
                             <label for="dcName">DC Name</label>
-                            <input id="dcName" class="form-control" name="=dcName" type="text">
+                            <input id="dcName" class="form-control" name="=dcName" type="text" ng-model="dcName">
 
                             <label for="dcFloor">DC Floor</label>
-                            <input id="dcFloor" class="form-control" name="=dcFloor" type="text">
+                            <input id="dcFloor" class="form-control" name="=dcFloor" type="text" ng-model="ddcFloor">
 
                             <label for="dcRow">DC Row</label>
-                            <input id="dcRow" class="form-control" name="=dcRow" type="text">
+                            <input id="dcRow" class="form-control" name="=dcRow" type="text" ng-model="dcRow">
 
                             <label for="dcRack">DC Rack</label>
-                            <input id="dcRack" class="form-control" name="=dcRack" type="text">
+                            <input id="dcRack" class="form-control" name="=dcRack" type="text" ng-model="dcRack">
 
                             <label for="dcRackElevation">Elevation</label>
-                            <input id="dcRackElevation" class="form-control" name="=dcRackElevation" type="text">
+                            <input id="dcRackElevation" class="form-control" name="=dcRackElevation" type="text" ng-model="elevation">
                             <br>
                             <div>
                                 <button type="submit" ng-click="submit()">Save</button>

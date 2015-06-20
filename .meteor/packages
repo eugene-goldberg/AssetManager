@@ -15,3 +15,5 @@ tmeasday:publish-counts
 email
 less
 twbs:bootstrap
+insecure
+autopublish

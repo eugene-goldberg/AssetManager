@@ -1,10 +1,10 @@
 angular.module("assetManager").controller("PartyDetailsCtrl", ['$scope', '$stateParams', '$meteor',
   function($scope, $stateParams, $meteor){
 
-    $scope.party = $meteor.object(Parties, $stateParams.partyId);
+    $scope.asset = $meteor.object(DCAssets, $stateParams.assetId);
 
     var subscriptionHandle;
-    $meteor.subscribe('parties').then(function(handle) {
+    $meteor.subscribe('assets').then(function(handle) {
       subscriptionHandle = handle;
     });
 
@@ -26,11 +26,11 @@ angular.module("assetManager").controller("PartyDetailsCtrl", ['$scope', '$state
     });
     
     $scope.canInvite = function (){
-        if (!$scope.party)
+        if (!$scope.asset)
           return false;
   
-        return !$scope.party.public &&
-          $scope.party.owner === Meteor.userId();
+        return !$scope.asset.public &&
+          $scope.asset.owner === Meteor.userId();
     };
 
     $scope.map = {
@@ -44,11 +44,11 @@ angular.module("assetManager").controller("PartyDetailsCtrl", ['$scope', '$state
           if (!$scope.party)
             return;
 
-          if (!$scope.party.location)
-            $scope.party.location = {};
+          if (!$scope.asset.location)
+            $scope.asset.location = {};
 
-          $scope.party.location.latitude = originalEventArgs[0].latLng.lat();
-          $scope.party.location.longitude = originalEventArgs[0].latLng.lng();
+          $scope.asset.location.latitude = originalEventArgs[0].latLng.lat();
+          $scope.asset.location.longitude = originalEventArgs[0].latLng.lng();
           //scope apply required because this event handler is outside of the angular domain
           $scope.$apply();
         }
@@ -57,11 +57,11 @@ angular.module("assetManager").controller("PartyDetailsCtrl", ['$scope', '$state
         options: { draggable: true },
         events: {
           dragend: function (marker, eventName, args) {
-            if (!$scope.party.location)
-              $scope.party.location = {};
+            if (!$scope.asset.location)
+              $scope.asset.location = {};
 
-            $scope.party.location.latitude = marker.getPosition().lat();
-            $scope.party.location.longitude = marker.getPosition().lng();
+            $scope.asset.location.latitude = marker.getPosition().lat();
+            $scope.asset.location.longitude = marker.getPosition().lng();
           }
         }
       }
