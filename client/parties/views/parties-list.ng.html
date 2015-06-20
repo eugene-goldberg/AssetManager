@@ -1,0 +1,37 @@
+<p>Asset scan form</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <form id="assetForm" name="assetForm">
+                        <div>
+                            <label for="assetScanCode">Asset tag</label>
+                            <input class="form-control" id="assetScanCode" type="text" placeholder={{placeholderMessage}}
+                                    ng-model="scanCode">
+
+                            <label for="dcName">DC Name</label>
+                            <input id="dcName" class="form-control" name="=dcName" type="text">
+
+                            <label for="dcFloor">DC Floor</label>
+                            <input id="dcFloor" class="form-control" name="=dcFloor" type="text">
+
+                            <label for="dcRow">DC Row</label>
+                            <input id="dcRow" class="form-control" name="=dcRow" type="text">
+
+                            <label for="dcRack">DC Rack</label>
+                            <input id="dcRack" class="form-control" name="=dcRack" type="text">
+
+                            <label for="dcRackElevation">Elevation</label>
+                            <input id="dcRackElevation" class="form-control" name="=dcRackElevation" type="text">
+                            <br>
+                            <div>
+                                <button type="submit" ng-click="submit()">Save</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
